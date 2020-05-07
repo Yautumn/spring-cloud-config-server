@@ -1,0 +1,18 @@
+server:
+  port: 8083   #注册中心端口是8081
+
+spring:
+  application:
+    name: spring-cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Yautumn/spring-config.git
+          search-paths: config-repo
+          username: yautumn1989@hotmail.com
+          password: zfq1217
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${eureka_host:localhost}:${eureka_port:8081}/eureka/
